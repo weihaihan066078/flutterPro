@@ -4,6 +4,11 @@ import 'package:mac_0106/pages/SearchPage.dart';
 import 'package:mac_0106/pages/tabs/Tabs.dart';
 import 'package:mac_0106/pages/productInfoPage.dart';
 import 'package:mac_0106/pages/Product.dart';
+import 'package:mac_0106/pages/user/Login.dart';
+import 'package:mac_0106/pages/user/Regist.dart';
+import 'package:mac_0106/pages/user/RegistSec.dart';
+import 'package:mac_0106/pages/user/RegistThi.dart';
+
 
 //配置路由
 final routes = {
@@ -12,6 +17,10 @@ final routes = {
   '/search': (context, {arguments}) => SearchPage(arguments: arguments),
   '/product': (context, {arguments}) => ProductPage(arguments: arguments,),
   '/productinfo': (context, {arguments}) => ProductInfoPage(arguments: arguments,),
+  '/login': (context, {arguments}) => LoginPage(arguments: arguments,),
+  '/regist': (context) => RegistPage(),
+  '/registsec': (context) => RegistSecPage(),
+  '/registthi': (context) => RegistThiPage(),
 };
 //固定写法
 var onGenerateRoute = (RouteSettings settings) {
