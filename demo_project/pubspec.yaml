@@ -20,6 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
   fluro: ^1.5.1
+  hexcolor: ^1.0.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -42,9 +43,21 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #  - images/a_dot_burr.jpeg
-  #  - images/a_dot_ham.jpeg
+  assets:
+  # assets-generator-begin
+  # assets/img/*
+    - assets/img/.DS_Store
+    - assets/img/categary.png
+    - assets/img/categary_selected.png
+    - assets/img/home.png
+    - assets/img/home_logo.png
+    - assets/img/home_scan.png
+    - assets/img/home_selected.png
+    - assets/img/list.png
+    - assets/img/list_selected.png
+    - assets/img/mine.png
+    - assets/img/mine_selected.png
+  # assets-generator-end
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
