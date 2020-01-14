@@ -26,35 +26,33 @@ class _HomePageState extends State<HomePage> {
             top: 30,
             child: Container(
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Hexcolor('#FF1417'), Hexcolor('#FFFFFF')],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter
-                )
-              ),
+                  gradient: LinearGradient(
+                      colors: [Hexcolor('#FF1417'), Hexcolor('#FFFFFF')],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter)),
               height: 155,
               width: MediaQuery.of(context).size.width,
             ),
           ),
           Positioned(
-            top: 30,
-            child: Container(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              child: ListView(
-                children: <Widget>[
-                  TopContainer()
-                ],
-              ),
-            )
-          )
+              top: 30,
+              child: Container(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: ListView(
+                  children: <Widget>[
+                    TopContainer(),
+                    VIPContainer(),
+                  ],
+                ),
+              ))
         ],
       ),
     );
   }
 }
 
-
+//顶部搜索按钮
 class TopSearchWidget extends StatefulWidget {
   TopSearchWidget({Key key}) : super(key: key);
 
@@ -113,6 +111,7 @@ class _TopSearchWidgetState extends State<TopSearchWidget> {
   }
 }
 
+//顶部banner+4个item
 class TopContainer extends StatefulWidget {
   TopContainer({Key key}) : super(key: key);
 
@@ -188,6 +187,55 @@ class _TopContainerState extends State<TopContainer> {
   }
 }
 
+//listview内容1
+class VIPContainer extends StatefulWidget {
+  VIPContainer({Key key}) : super(key: key);
+
+  @override
+  _VIPContainerState createState() => _VIPContainerState();
+}
+
+class _VIPContainerState extends State<VIPContainer> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(13, 0, 13, 0),
+      child: Container(
+        padding: EdgeInsets.fromLTRB(13, 0, 0, 0),
+        height: 235,
+        // color: ColorsUtil.hexColor(0xf0f0f0),
+        child: Column(
+          children: <Widget>[
+            SizedBox(
+              height: 16,
+            ),
+            Container(
+              height: 50,
+              // color: Colors.black,
+              child: Row(
+                children: <Widget>[
+                  Text(
+                    '会员专享特权',
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: ColorsUtil.hexColor(0x333333)),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Image.asset(R.assetsImgHomeVIP)
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+//自定义item组件
 class MyItem extends StatelessWidget {
   final String title;
   final Widget item;

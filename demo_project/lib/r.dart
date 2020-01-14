@@ -7,6 +7,8 @@ class R {
   static final String assetsImgCategarySelected = 'assets/img/categary_selected.png';
   /// ![](http://127.0.0.1:9527/assets/img/home.png)
   static final String assetsImgHome = 'assets/img/home.png';
+  /// ![](http://127.0.0.1:9527/assets/img/home_VIP.png)
+  static final String assetsImgHomeVIP = 'assets/img/home_VIP.png';
   /// ![](http://127.0.0.1:9527/assets/img/home_bussn.png)
   static final String assetsImgHomeBussn = 'assets/img/home_bussn.png';
   /// ![](http://127.0.0.1:9527/assets/img/home_ent.png)

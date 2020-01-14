@@ -51,6 +51,7 @@ flutter:
     - assets/img/categary.png
     - assets/img/categary_selected.png
     - assets/img/home.png
+    - assets/img/home_VIP.png
     - assets/img/home_bussn.png
     - assets/img/home_ent.png
     - assets/img/home_logo.png
