@@ -21,6 +21,7 @@ dependencies:
     sdk: flutter
   fluro: ^1.5.1
   hexcolor: ^1.0.1
+  flutter_swiper: ^1.1.6
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -50,8 +51,14 @@ flutter:
     - assets/img/categary.png
     - assets/img/categary_selected.png
     - assets/img/home.png
+    - assets/img/home_bussn.png
+    - assets/img/home_ent.png
     - assets/img/home_logo.png
+    - assets/img/home_money.png
+    - assets/img/home_position.png
+    - assets/img/home_res.png
     - assets/img/home_scan.png
+    - assets/img/home_search.png
     - assets/img/home_selected.png
     - assets/img/list.png
     - assets/img/list_selected.png

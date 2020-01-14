@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:demo_project/r.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+import 'package:demo_project/custom/CustomAppbar.dart';
+
 import 'HomePage.dart';
 import 'CatorgrayPage.dart';
 import 'OrderListPage.dart';
@@ -43,13 +45,18 @@ class _TabsState extends State<Tabs> {
         preferredSize: Size.fromHeight(MediaQuery.of(context).size.height*0.07),
         child: Offstage(
           offstage: _currentIndex == 3?true:false,
-          child: AppBar(
-            title: Text(
-              this._titleList[this._currentIndex],
-              style: TextStyle(
-                color: Hexcolor('#333333')
-              ),
+          child: _currentIndex == 0?CustomAppbar(
+            title: '',
+            navigationBarBackgroundColor: Hexcolor('#FF1619'),
+            leadingWidget: Image.asset(R.assetsImgHomeLogo,fit: BoxFit.fill,),
+            trailingWidget: InkWell(
+              child: Image.asset(R.assetsImgHomeScan,fit: BoxFit.fill,),
+              onTap: (){
+
+              },
             ),
+          ):AppBar(
+            title: Text(_titleList[_currentIndex],style: TextStyle(color: Hexcolor('333333')),),
             backgroundColor: Colors.white,
           ),
         ),  
