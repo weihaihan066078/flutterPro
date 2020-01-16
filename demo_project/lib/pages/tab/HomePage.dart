@@ -43,6 +43,7 @@ class _HomePageState extends State<HomePage> {
                   children: <Widget>[
                     TopContainer(),
                     VIPContainer(),
+                    TeamContainer(),
                   ],
                 ),
               ))
@@ -125,6 +126,7 @@ class _TopContainerState extends State<TopContainer> {
     return Column(
       children: <Widget>[
         Container(
+          // color: ColorsUtil.hexColor(0xeeeeee),
           height: 195.0,
           child: Column(
             children: <Widget>[
@@ -198,38 +200,157 @@ class VIPContainer extends StatefulWidget {
 class _VIPContainerState extends State<VIPContainer> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(13, 0, 13, 0),
-      child: Container(
-        padding: EdgeInsets.fromLTRB(13, 0, 0, 0),
-        height: 235,
-        // color: ColorsUtil.hexColor(0xf0f0f0),
+    return Container(
+        height: 240,
+        color: Colors.yellow,
         child: Column(
           children: <Widget>[
             SizedBox(
-              height: 16,
+              height: 10,
+            ),
+            Stack(
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    SizedBox(
+                      width: 18,
+                    ),
+                    Text(
+                      '会员专享特权',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w400,
+                          color: ColorsUtil.hexColor(0x333333)),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Image.asset(R.assetsImgHomeVIP),
+                  ],
+                ),
+                Positioned(
+                  right: 10,
+                  child: Row(
+                    children: <Widget>[Text('更多'), Icon(Icons.arrow_right)],
+                  ),
+                )
+              ],
             ),
             Container(
-              height: 50,
-              // color: Colors.black,
+              padding: EdgeInsets.only(left: 12.5, right: 12.5, top: 12),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  Text(
-                    '会员专享特权',
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: ColorsUtil.hexColor(0x333333)),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Image.asset(R.assetsImgHomeVIP)
+                  VIPItem(),
+                  VIPItem(),
+                  VIPItem(),
                 ],
               ),
             )
           ],
-        ),
+        ));
+  }
+}
+
+//listview内容2
+class TeamContainer extends StatefulWidget {
+  TeamContainer({Key key}) : super(key: key);
+
+  @override
+  _TeamContainerState createState() => _TeamContainerState();
+}
+
+class _TeamContainerState extends State<TeamContainer> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        height: 240,
+        width: MediaQuery.of(context).size.width,
+        color: Colors.red,
+        child: Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(left: 18, top: 10),
+                  child: Text(
+                    '集采联盟',
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400,
+                        color: ColorsUtil.hexColor(0x333333)),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              height: 200,
+              child: AspectRatio(
+                child: Swiper(
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    return TeamItem();
+                  },
+                ),
+                aspectRatio: 375 / 160,
+              ),
+            )
+          ],
+        ));
+  }
+}
+
+//自定义会员特权专享item
+class VIPItem extends StatefulWidget {
+  VIPItem({Key key}) : super(key: key);
+
+  @override
+  _VIPItemState createState() => _VIPItemState();
+}
+
+class _VIPItemState extends State<VIPItem> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 115,
+      height: 173,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(7.5)),
+          color: Colors.white),
+      child: Column(
+        children: <Widget>[
+          SizedBox(
+            height: 24,
+          ),
+          Image.asset(R.assetsImgHomeItem1),
+          SizedBox(
+            height: 18,
+          ),
+          Text(
+            '苏泊尔电饭锅11111',
+            style: TextStyle(fontSize: 12),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                '¥259',
+                style: TextStyle(fontSize: 18),
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Text(
+                '¥259',
+                style: TextStyle(
+                  decoration: TextDecoration.lineThrough,
+                  decorationColor: Colors.grey,
+                  fontSize: 12,
+                ),
+              ),
+            ],
+          )
+        ],
       ),
     );
   }
@@ -258,6 +379,47 @@ class MyItem extends StatelessWidget {
             style: TextStyle(
               fontSize: 12,
               color: ColorsUtil.hexColor(0x333333),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+//集采联盟swiper内组件
+class TeamItem extends StatefulWidget {
+  TeamItem({Key key}) : super(key: key);
+
+  @override
+  _TeamItemState createState() => _TeamItemState();
+}
+
+class _TeamItemState extends State<TeamItem> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 350,
+      child: Row(
+        children: <Widget>[
+          Container(
+            height: 200,
+            width: 110,
+            child: Image.network(
+              'https://www.itying.com/images/flutter/2.png',
+              fit: BoxFit.fill,
+            ),
+          ),
+          Container(
+            height: 200,
+            width: 230,
+            child: Column(
+              children: <Widget>[
+                Text(
+                    '新品抢购 Redmi Note8 4800万全场景四摄 4000mAh长续航 高通骁龙665 18W快充 小金刚品质保证 6G'),
+                Text('距结束20.00000000'),
+                Text('订金 1099')
+              ],
             ),
           )
         ],

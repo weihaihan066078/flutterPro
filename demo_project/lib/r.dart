@@ -13,6 +13,12 @@ class R {
   static final String assetsImgHomeBussn = 'assets/img/home_bussn.png';
   /// ![](http://127.0.0.1:9527/assets/img/home_ent.png)
   static final String assetsImgHomeEnt = 'assets/img/home_ent.png';
+  /// ![](http://127.0.0.1:9527/assets/img/home_item1.png)
+  static final String assetsImgHomeItem1 = 'assets/img/home_item1.png';
+  /// ![](http://127.0.0.1:9527/assets/img/home_item2.png)
+  static final String assetsImgHomeItem2 = 'assets/img/home_item2.png';
+  /// ![](http://127.0.0.1:9527/assets/img/home_item3.png)
+  static final String assetsImgHomeItem3 = 'assets/img/home_item3.png';
   /// ![](http://127.0.0.1:9527/assets/img/home_logo.png)
   static final String assetsImgHomeLogo = 'assets/img/home_logo.png';
   /// ![](http://127.0.0.1:9527/assets/img/home_money.png)

@@ -54,6 +54,9 @@ flutter:
     - assets/img/home_VIP.png
     - assets/img/home_bussn.png
     - assets/img/home_ent.png
+    - assets/img/home_item1.png
+    - assets/img/home_item2.png
+    - assets/img/home_item3.png
     - assets/img/home_logo.png
     - assets/img/home_money.png
     - assets/img/home_position.png
